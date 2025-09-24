@@ -1,4 +1,4 @@
-<html>
+    <html>
         <head>
             <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">          
             
@@ -9,34 +9,35 @@
             <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
             <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
         </head>
-        <body>
+        <body style="background-color:black;">
         
-              <h1>gallery made with nanogallery2</h1>
-
-              <!-- ### start of the gallery definition ### -->
-              <div id="nanogallery2"
-              
-                  <!-- gallery settings -->
-                  data-nanogallery2 = '{
-                        "thumbnailHeight":  150,
-                        "thumbnailWidth":   150,
-                        "itemsBaseURL":     "https://lcofeer.github.io/photos/photos/"
-                      }' >
-                      
-                  <!-- gallery content -->
-
-<a href = "Turkey1.jpg"   > </a>
-<a href = "Turkey2.jpg"   > </a>
-<a href = "Turkey3.jpg"   > </a>
-<a href = "Turkey4.jpg"   > </a>
-<a href = "Turkey5.jpg"   > </a>
-<a href = "Turkey6.jpg"   > </a>
-<a href = "Turkey7.jpg"   > </a>
-<a href = "Turkey8.jpg"   > </a>
-<a href = "Turkey9.jpg"   > </a>
-<a href = "Turkey10.jpg"   > </a>
-              </div>
-              <!-- ### end of the gallery definition ### -->
+              <!-- ### position of the gallery ### -->
+              <div id="nanogallery2">gallery_made_with_nanogallery2</div>
             
+              <script>
+                 var images = [];
+                 var image_count = 10;
+                 var image_file = '';
+                 for (var i = 1; i <= image_count; i++)
+                 {
+                     image_file = 'img'+i+'.jpg';
+                     images.push({ src: image_file, srct: image_file, title: '' });
+                 }         
+                 
+                 jQuery(document).ready(function () {
+
+                    jQuery("#nanogallery2").nanogallery2( {
+                        // ### gallery settings ### 
+                        thumbnailHeight:  150,
+                        thumbnailWidth:   150,
+                        itemsBaseURL:     'https://lcofeer.github.io/photos/images/',
+                        
+                        // ### gallery content ### 
+                        items: images
+                      });
+                  });
+              </script>
+
           </body>
       </html>
+          
