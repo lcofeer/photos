@@ -1,0 +1,44 @@
+    <html>
+        <head>
+            <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">          
+            
+            <!-- jQuery -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+          
+            <!-- nanogallery2 -->
+            <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+            <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+        </head>
+        <body style="background-color:black;">
+        
+              <!-- ### position of the gallery ### -->
+              <div id="nanogallery2">gallery_made_with_nanogallery2</div>
+            
+              <script>
+                 var images = [];
+                 var image_count = 50;
+                 var image_file = '', small_image_file = '';
+                 for (var i = 1; i <= image_count; i++)
+                 {
+                     image_file = 'img' + i + '.jpg';
+                     small_image_file = 'img' + i + '_small.jpg';
+                     images.push({ src: image_file, srct: small_image_file, title: '' });
+                 }         
+                 
+                 jQuery(document).ready(function () {
+
+                    jQuery("#nanogallery2").nanogallery2( {
+                        // ### gallery settings ### 
+                        thumbnailHeight:  185,
+                        thumbnailWidth:   185,
+                        itemsBaseURL:     'https://lcofeer.github.io/photos/paintings/',
+                        
+                        // ### gallery content ### 
+                        items: images
+                      });
+                  });
+              </script>
+
+          </body>
+      </html>
+          
